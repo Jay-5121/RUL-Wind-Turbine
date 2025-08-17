@@ -65,15 +65,48 @@ def load_features_data():
         st.error(f"Error loading features data: {e}")
         return None
 
+def load_local_models():
+    """Checks for models on the local filesystem."""
+    models_found = []
+    project_root = get_project_root()
+
+    # Check for XGBoost model
+    xgb_path = os.path.join(project_root, "models", "rul_xgb.json")
+    if os.path.exists(xgb_path):
+        models_found.append("xgboost")
+
+    # Check for GRU model
+    gru_path = os.path.join(project_root, "models", "rul_gru.pth")
+    if os.path.exists(gru_path):
+        models_found.append("gru")
+
+    return models_found
+
 def check_api_status():
-    """Check the health status of the backend API."""
+    """
+    Check the health status of the backend API.
+    If the API is not available, it falls back to checking models locally.
+    """
     try:
-        response = requests.get("http://127.0.0.1:8000/health", timeout=5)
+        # Check for an environment variable to see if running on Streamlit Cloud
+        # A more robust solution for Streamlit sharing
+        is_streamlit_cloud = os.environ.get('HOSTNAME') == 'streamlit' or 'STREAMLIT_SHARING_MODE' in os.environ
+
+        if is_streamlit_cloud:
+            # On Streamlit Cloud, don't even try to connect to a local API
+            models_loaded = load_local_models()
+            return "standalone", models_loaded
+
+        # Try to connect to the local API
+        response = requests.get("http://127.0.0.1:8000/health", timeout=2)
         if response.status_code == 200:
             return "healthy", response.json().get("models_loaded", [])
         return "degraded", []
+
     except requests.exceptions.ConnectionError:
-        return "unavailable", []
+        # If API is not running locally, check for local models
+        models_loaded = load_local_models()
+        return "standalone", models_loaded
 
 # --- Plotting Functions ---
 
@@ -178,10 +211,23 @@ def main():
         st.header("📊 Dashboard Controls")
         
         api_status, models_loaded = check_api_status()
-        status_icon = {"healthy": "✅", "degraded": "⚠️", "unavailable": "❌"}.get(api_status, "❓")
-        st.info(f"API Status: **{api_status.upper()}** {status_icon}")
+
+        if api_status == 'healthy':
+            status_icon = "✅"
+            status_text = "API Connected"
+        elif api_status == 'standalone':
+            status_icon = "📦"
+            status_text = "Standalone Mode"
+        else:
+            status_icon = "❌"
+            status_text = "API Unavailable"
+
+        st.info(f"Mode: **{status_text}** {status_icon}")
+
         if models_loaded:
-            st.write(f"Models Loaded: `{'`, `'.join(models_loaded)}`")
+            st.write(f"Models Found: `{'`, `'.join(models_loaded)}`")
+        else:
+            st.warning("No models found.")
         st.markdown("---")
 
         if 'features_data' not in st.session_state:
