@@ -1,0 +1,1688 @@
+2025-08-15 18:16:16,995 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:16:16,996 - INFO - Loading CSV data...
+2025-08-15 18:16:17,043 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:16:17,043 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:16:17,044 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:16:17,046 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:16:17,052 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:16:17,053 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:16:17,066 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:16:17,082 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:16:17,085 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:16:17,087 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:16:17,095 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:16:17,098 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:16:17,099 - INFO - Performing final data validation...
+2025-08-15 18:16:17,099 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:16:17,100 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:16:17,102 - INFO - All missing values have been successfully handled
+2025-08-15 18:16:17,102 - INFO - Data cleaning completed successfully!
+2025-08-15 18:16:17,103 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:16:17,104 - INFO - Turbine IDs: 3
+2025-08-15 18:16:17,109 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:16:17,110 - INFO - Starting RUL label generation...
+2025-08-15 18:16:17,111 - INFO - No failure_flag column found. Building Health Index for pseudo-failure detection...
+2025-08-15 18:16:17,112 - INFO - Using 8 critical sensors: ['wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:16:17,112 - INFO - Extracting rolling features for 8 sensors...
+2025-08-15 18:16:17,194 - INFO - Rolling features extracted. New shape: (3000, 42)
+2025-08-15 18:16:17,194 - INFO - Building Health Index using PCA...
+2025-08-15 18:16:17,194 - INFO - Using 32 features for Health Index
+2025-08-15 18:16:17,241 - INFO - Health Index built successfully. Range: 0.000 to 1.000
+2025-08-15 18:16:17,241 - INFO - PCA explained variance ratio: [0.56328111 0.06360763 0.04855805]
+2025-08-15 18:16:17,242 - INFO - Detecting pseudo-failures with threshold 0.3 and 5 consecutive windows...
+2025-08-15 18:17:41,501 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:17:41,502 - INFO - Loading CSV data...
+2025-08-15 18:17:41,511 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:17:41,512 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:17:41,512 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:17:41,513 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:17:41,514 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:17:41,514 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:17:41,519 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:17:41,523 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:17:41,524 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:17:41,525 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:17:41,527 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:17:41,530 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:17:41,531 - INFO - Performing final data validation...
+2025-08-15 18:17:41,531 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:17:41,532 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:17:41,533 - INFO - All missing values have been successfully handled
+2025-08-15 18:17:41,533 - INFO - Data cleaning completed successfully!
+2025-08-15 18:17:41,534 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:17:41,534 - INFO - Turbine IDs: 3
+2025-08-15 18:17:41,536 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:17:41,537 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:17:41,538 - INFO - Building Health Index using PCA...
+2025-08-15 18:18:57,015 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:18:57,015 - INFO - Loading CSV data...
+2025-08-15 18:18:57,026 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:18:57,026 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:18:57,027 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:18:57,028 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:18:57,029 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:18:57,029 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:18:57,034 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:18:57,038 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:18:57,038 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:18:57,039 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:18:57,042 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:18:57,044 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:18:57,045 - INFO - Performing final data validation...
+2025-08-15 18:18:57,045 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:18:57,046 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:18:57,047 - INFO - All missing values have been successfully handled
+2025-08-15 18:18:57,047 - INFO - Data cleaning completed successfully!
+2025-08-15 18:18:57,048 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:18:57,048 - INFO - Turbine IDs: 3
+2025-08-15 18:18:57,049 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:18:57,049 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:18:57,050 - INFO - Building Health Index using PCA...
+2025-08-15 18:18:57,057 - INFO - PCA explained variance: 0.2947
+2025-08-15 18:18:57,058 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-15 18:18:57,069 - INFO - Detected 48 pseudo-failures.
+2025-08-15 18:22:00,518 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:22:00,519 - INFO - Loading CSV data...
+2025-08-15 18:22:00,530 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:22:00,530 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:22:00,531 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:22:00,532 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:22:00,533 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:22:00,533 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:22:00,537 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:22:00,541 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:22:00,542 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:22:00,543 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:22:00,546 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:22:00,548 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:22:00,549 - INFO - Performing final data validation...
+2025-08-15 18:22:00,549 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:22:00,550 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:22:00,552 - INFO - All missing values have been successfully handled
+2025-08-15 18:22:00,552 - INFO - Data cleaning completed successfully!
+2025-08-15 18:22:00,553 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:22:00,554 - INFO - Turbine IDs: 3
+2025-08-15 18:22:00,555 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:22:00,556 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:22:00,556 - INFO - Building Health Index using PCA...
+2025-08-15 18:22:00,562 - INFO - PCA explained variance: 0.2947
+2025-08-15 18:22:00,563 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-15 18:22:00,569 - INFO - Detected 48 pseudo-failures.
+2025-08-15 18:22:00,611 - INFO - RUL labeling completed.
+2025-08-15 18:22:00,612 - INFO - Starting feature extraction process...
+2025-08-15 18:22:00,613 - INFO - Input data shape: (3000, 13)
+2025-08-15 18:22:00,614 - INFO - Identified 11 numeric sensor columns: ['turbine_id', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y', 'health_index', 'pseudo_failure']
+2025-08-15 18:22:00,614 - INFO - Step 1/5: Creating rolling features...
+2025-08-15 18:22:00,615 - INFO - Creating rolling features for 11 sensors...
+2025-08-15 18:22:00,615 - INFO - Processing sensor: turbine_id
+2025-08-15 18:23:41,877 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:23:41,878 - INFO - Loading CSV data...
+2025-08-15 18:23:41,900 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:23:41,901 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:23:41,901 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:23:41,903 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:23:41,905 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:23:41,905 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:23:41,914 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:23:41,920 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:23:41,921 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:23:41,923 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:23:41,927 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:23:41,933 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:23:41,934 - INFO - Performing final data validation...
+2025-08-15 18:23:41,935 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:23:41,936 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:23:41,938 - INFO - All missing values have been successfully handled
+2025-08-15 18:23:41,939 - INFO - Data cleaning completed successfully!
+2025-08-15 18:23:41,939 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:23:41,941 - INFO - Turbine IDs: 3
+2025-08-15 18:23:41,943 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:23:41,946 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:23:41,946 - INFO - Building Health Index using PCA...
+2025-08-15 18:23:41,959 - INFO - PCA explained variance: 0.2947
+2025-08-15 18:23:41,960 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-15 18:23:41,971 - INFO - Detected 48 pseudo-failures.
+2025-08-15 18:23:42,041 - INFO - RUL labeling completed.
+2025-08-15 18:23:42,043 - INFO - Starting feature extraction process...
+2025-08-15 18:23:42,043 - INFO - Input data shape: (3000, 13)
+2025-08-15 18:23:42,045 - INFO - Identified 11 numeric sensor columns: ['turbine_id', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y', 'health_index', 'pseudo_failure']
+2025-08-15 18:23:42,045 - INFO - Step 1/5: Creating rolling features...
+2025-08-15 18:23:42,046 - INFO - Creating rolling features for 11 sensors...
+2025-08-15 18:23:42,047 - INFO - Processing sensor: turbine_id
+2025-08-15 18:29:15,799 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:29:15,800 - INFO - Loading CSV data...
+2025-08-15 18:29:15,815 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:29:15,816 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:29:15,816 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:29:15,818 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:29:15,818 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:29:15,819 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:29:15,825 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:29:15,831 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:29:15,832 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:29:15,833 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:29:15,836 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:29:15,839 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:29:15,840 - INFO - Performing final data validation...
+2025-08-15 18:29:15,840 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:29:15,841 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:29:15,843 - INFO - All missing values have been successfully handled
+2025-08-15 18:29:15,843 - INFO - Data cleaning completed successfully!
+2025-08-15 18:29:15,844 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:29:15,844 - INFO - Turbine IDs: 3
+2025-08-15 18:29:15,845 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:29:15,848 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:29:15,849 - INFO - Building Health Index using PCA...
+2025-08-15 18:29:15,857 - INFO - PCA explained variance: 0.2947
+2025-08-15 18:29:15,859 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-15 18:29:15,867 - INFO - Detected 48 pseudo-failures.
+2025-08-15 18:29:15,917 - INFO - RUL labeling completed.
+2025-08-15 18:29:15,918 - INFO - Starting feature extraction process...
+2025-08-15 18:29:15,920 - INFO - Creating rolling features for 11 sensors...
+2025-08-15 18:29:16,099 - INFO - Creating temporal features...
+2025-08-15 18:29:16,150 - INFO - Adding power curve residuals...
+2025-08-15 18:29:16,194 - INFO - Dropped 2933 rows with NaN features.
+2025-08-15 18:29:16,998 - INFO - Features saved to: data/features.parquet
+2025-08-15 18:29:16,999 - INFO - Starting baseline model training...
+2025-08-15 18:29:18,082 - INFO - Training final model on full dataset...
+2025-08-15 18:29:18,129 - ERROR - Model training failed: [18:29:18] C:\actions-runner\_work\xgboost\xgboost\src\data\gradient_index.h:100: Check failed: valid: Input data contains `inf` or a value too large, while `missing` is not set to `inf`
+2025-08-15 18:31:54,821 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:31:54,822 - INFO - Loading CSV data...
+2025-08-15 18:31:54,837 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:31:54,838 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:31:54,838 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:31:54,841 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:31:54,842 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:31:54,842 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:31:54,850 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:31:54,856 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:31:54,858 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:31:54,859 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:31:54,863 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:31:54,867 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:31:54,867 - INFO - Performing final data validation...
+2025-08-15 18:31:54,868 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:31:54,870 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:31:54,872 - INFO - All missing values have been successfully handled
+2025-08-15 18:31:54,873 - INFO - Data cleaning completed successfully!
+2025-08-15 18:31:54,874 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:31:54,875 - INFO - Turbine IDs: 3
+2025-08-15 18:31:54,876 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:31:54,877 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:31:54,878 - INFO - Building Health Index using PCA...
+2025-08-15 18:31:54,890 - INFO - PCA explained variance: 0.2947
+2025-08-15 18:31:54,891 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-15 18:31:54,898 - INFO - Detected 48 pseudo-failures.
+2025-08-15 18:31:54,949 - INFO - RUL labeling completed.
+2025-08-15 18:31:54,950 - INFO - Starting feature extraction process...
+2025-08-15 18:31:54,951 - INFO - Creating rolling features for 11 sensors...
+2025-08-15 18:31:55,122 - INFO - Creating temporal features...
+2025-08-15 18:31:55,164 - INFO - Adding power curve residuals...
+2025-08-15 18:31:55,182 - INFO - Dropped 2933 rows with NaN features.
+2025-08-15 18:31:55,250 - INFO - Features saved to: data/features.parquet
+2025-08-15 18:31:55,251 - INFO - Starting baseline model training...
+2025-08-15 18:31:55,378 - INFO - Training final model on full dataset...
+2025-08-15 18:31:55,397 - ERROR - Model training failed: [18:31:55] C:\actions-runner\_work\xgboost\xgboost\src\data\gradient_index.h:100: Check failed: valid: Input data contains `inf` or a value too large, while `missing` is not set to `inf`
+2025-08-15 18:38:45,993 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-15 18:38:45,993 - INFO - Loading CSV data...
+2025-08-15 18:38:46,003 - INFO - Loaded 3000 rows and 10 columns
+2025-08-15 18:38:46,004 - INFO - Initial data shape: (3000, 10)
+2025-08-15 18:38:46,004 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-15 18:38:46,006 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-15 18:38:46,006 - INFO - Detected potential datetime column: timestamp
+2025-08-15 18:38:46,006 - INFO - Parsing datetime column: timestamp
+2025-08-15 18:38:46,011 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-15 18:38:46,015 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-15 18:38:46,016 - INFO - Processing 9 numeric columns for missing values
+2025-08-15 18:38:46,017 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-15 18:38:46,019 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-15 18:38:46,024 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-15 18:38:46,024 - INFO - Performing final data validation...
+2025-08-15 18:38:46,024 - INFO - Final data shape: (3000, 10)
+2025-08-15 18:38:46,026 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-15 18:38:46,028 - INFO - All missing values have been successfully handled
+2025-08-15 18:38:46,028 - INFO - Data cleaning completed successfully!
+2025-08-15 18:38:46,028 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-15 18:38:46,029 - INFO - Turbine IDs: 3
+2025-08-15 18:38:46,029 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-15 18:38:46,030 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-15 18:38:46,031 - INFO - Building Health Index using PCA...
+2025-08-15 18:38:46,036 - INFO - PCA explained variance: 0.2947
+2025-08-15 18:38:46,037 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-15 18:38:46,043 - INFO - Detected 48 pseudo-failures.
+2025-08-15 18:38:46,076 - INFO - RUL labeling completed.
+2025-08-15 18:38:46,077 - INFO - Starting feature extraction process...
+2025-08-15 18:38:46,079 - INFO - Creating rolling features for 11 sensors...
+2025-08-15 18:38:46,196 - INFO - Creating temporal features...
+2025-08-15 18:38:46,221 - INFO - Adding power curve residuals...
+2025-08-15 18:38:46,230 - INFO - Dropped 2933 rows with NaN features.
+2025-08-15 18:38:46,267 - INFO - Features saved to: data/features.parquet
+2025-08-15 18:38:46,268 - INFO - Starting baseline model training...
+2025-08-15 18:38:46,340 - INFO - Training final model on full dataset...
+2025-08-15 18:38:47,625 - INFO - Model saved to: models/rul_xgb.json
+2025-08-15 18:38:47,629 - INFO - Training results saved to: models/training_results.json
+2025-08-15 18:38:47,632 - INFO - Starting GRU sequence model training...
+2025-08-16 10:16:01,523 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-16 10:16:01,524 - INFO - Loading CSV data...
+2025-08-16 10:16:01,551 - INFO - Loaded 3000 rows and 10 columns
+2025-08-16 10:16:01,552 - INFO - Initial data shape: (3000, 10)
+2025-08-16 10:16:01,552 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-16 10:16:01,555 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-16 10:16:01,560 - INFO - Detected potential datetime column: timestamp
+2025-08-16 10:16:01,561 - INFO - Parsing datetime column: timestamp
+2025-08-16 10:16:01,571 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-16 10:16:01,588 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-16 10:16:01,591 - INFO - Processing 9 numeric columns for missing values
+2025-08-16 10:16:01,592 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-16 10:16:01,600 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-16 10:16:01,604 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-16 10:16:01,604 - INFO - Performing final data validation...
+2025-08-16 10:16:01,605 - INFO - Final data shape: (3000, 10)
+2025-08-16 10:16:01,606 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-16 10:16:01,607 - INFO - All missing values have been successfully handled
+2025-08-16 10:16:01,607 - INFO - Data cleaning completed successfully!
+2025-08-16 10:16:01,608 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-16 10:16:01,609 - INFO - Turbine IDs: 3
+2025-08-16 10:16:01,612 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-16 10:16:01,613 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-16 10:16:01,614 - INFO - Building Health Index using PCA...
+2025-08-16 10:16:01,644 - INFO - PCA explained variance: 0.2947
+2025-08-16 10:16:01,645 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-16 10:16:01,654 - INFO - Detected 48 pseudo-failures.
+2025-08-16 10:16:01,702 - INFO - RUL labeling completed.
+2025-08-16 10:16:01,703 - INFO - Starting feature extraction process...
+2025-08-16 10:16:01,704 - INFO - Creating rolling features for 11 sensors...
+2025-08-16 10:16:01,840 - INFO - Creating temporal features...
+2025-08-16 10:16:01,892 - INFO - Adding power curve residuals...
+2025-08-16 10:16:01,928 - INFO - Dropped 2933 rows with NaN features.
+2025-08-16 10:16:02,107 - INFO - Features saved to: data/features.parquet
+2025-08-16 10:16:02,108 - INFO - Starting baseline model training...
+2025-08-16 10:16:02,338 - INFO - Training final model on full dataset...
+2025-08-16 10:16:04,186 - INFO - Model saved to: models/rul_xgb.json
+2025-08-16 10:16:04,187 - INFO - Training results saved to: models/training_results.json
+2025-08-16 10:16:04,188 - INFO - Starting GRU sequence model training...
+2025-08-16 10:22:18,296 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-16 10:22:18,297 - INFO - Loading CSV data...
+2025-08-16 10:22:18,342 - INFO - Loaded 3000 rows and 10 columns
+2025-08-16 10:22:18,344 - INFO - Initial data shape: (3000, 10)
+2025-08-16 10:22:18,344 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-16 10:22:18,349 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-16 10:22:18,351 - INFO - Detected potential datetime column: timestamp
+2025-08-16 10:22:18,352 - INFO - Parsing datetime column: timestamp
+2025-08-16 10:22:18,361 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-16 10:22:18,366 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-16 10:22:18,367 - INFO - Processing 9 numeric columns for missing values
+2025-08-16 10:22:18,368 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-16 10:22:18,372 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-16 10:22:18,379 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-16 10:22:18,380 - INFO - Performing final data validation...
+2025-08-16 10:22:18,381 - INFO - Final data shape: (3000, 10)
+2025-08-16 10:22:18,383 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-16 10:22:18,385 - INFO - All missing values have been successfully handled
+2025-08-16 10:22:18,385 - INFO - Data cleaning completed successfully!
+2025-08-16 10:22:18,385 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-16 10:22:18,387 - INFO - Turbine IDs: 3
+2025-08-16 10:22:18,388 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-16 10:22:18,392 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-16 10:22:18,393 - INFO - Building Health Index using PCA...
+2025-08-16 10:22:18,413 - INFO - PCA explained variance: 0.2947
+2025-08-16 10:22:18,414 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-16 10:22:18,421 - INFO - Detected 48 pseudo-failures.
+2025-08-16 10:22:18,476 - INFO - RUL labeling completed.
+2025-08-16 10:22:18,477 - INFO - Starting feature extraction process...
+2025-08-16 10:22:18,478 - INFO - Creating rolling features for 11 sensors...
+2025-08-16 10:22:18,653 - INFO - Creating temporal features...
+2025-08-16 10:22:18,683 - INFO - Adding power curve residuals...
+2025-08-16 10:22:18,697 - INFO - Dropped 2933 rows with NaN features.
+2025-08-16 10:22:19,243 - INFO - Features saved to: data/features.parquet
+2025-08-16 10:22:19,244 - INFO - Starting baseline model training...
+2025-08-16 10:22:20,445 - INFO - Training final model on full dataset...
+2025-08-16 10:22:22,245 - INFO - Model saved to: models/rul_xgb.json
+2025-08-16 10:22:22,253 - INFO - Training results saved to: models/training_results.json
+2025-08-16 10:22:22,258 - INFO - Starting GRU sequence model training...
+2025-08-16 10:46:48,196 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-16 10:46:48,197 - INFO - Loading CSV data...
+2025-08-16 10:46:48,214 - INFO - Loaded 3000 rows and 10 columns
+2025-08-16 10:46:48,214 - INFO - Initial data shape: (3000, 10)
+2025-08-16 10:46:48,214 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-16 10:46:48,216 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-16 10:46:48,217 - INFO - Detected potential datetime column: timestamp
+2025-08-16 10:46:48,217 - INFO - Parsing datetime column: timestamp
+2025-08-16 10:46:48,227 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-16 10:46:48,236 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-16 10:46:48,239 - INFO - Processing 9 numeric columns for missing values
+2025-08-16 10:46:48,368 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-16 10:46:48,380 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-16 10:46:48,402 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-16 10:46:48,403 - INFO - Performing final data validation...
+2025-08-16 10:46:48,403 - INFO - Final data shape: (3000, 10)
+2025-08-16 10:46:48,404 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-16 10:46:48,405 - INFO - All missing values have been successfully handled
+2025-08-16 10:46:48,405 - INFO - Data cleaning completed successfully!
+2025-08-16 10:46:48,406 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-16 10:46:48,407 - INFO - Turbine IDs: 3
+2025-08-16 10:46:48,410 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-16 10:46:48,412 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-16 10:46:48,412 - INFO - Building Health Index using PCA...
+2025-08-16 10:46:48,436 - INFO - PCA explained variance: 0.2947
+2025-08-16 10:46:48,437 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-16 10:46:48,447 - INFO - Detected 48 pseudo-failures.
+2025-08-16 10:46:48,481 - INFO - RUL labeling completed.
+2025-08-16 10:46:48,482 - INFO - Starting feature extraction process...
+2025-08-16 10:46:48,483 - INFO - Creating rolling features for 11 sensors...
+2025-08-16 10:46:48,587 - INFO - Creating temporal features...
+2025-08-16 10:46:48,619 - INFO - Adding power curve residuals...
+2025-08-16 10:46:48,642 - INFO - Dropped 2933 rows with NaN features.
+2025-08-16 10:46:48,680 - INFO - Features saved to: data/features.parquet
+2025-08-16 10:46:48,681 - INFO - Starting baseline model training...
+2025-08-16 10:46:48,733 - INFO - Training final model on full dataset...
+2025-08-16 10:46:49,313 - INFO - Model saved to: models/rul_xgb.json
+2025-08-16 10:46:49,314 - INFO - Training results saved to: models/training_results.json
+2025-08-16 10:46:49,315 - INFO - Starting GRU sequence model training...
+2025-08-16 10:48:22,576 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-16 10:48:22,577 - INFO - Loading CSV data...
+2025-08-16 10:48:22,585 - INFO - Loaded 3000 rows and 10 columns
+2025-08-16 10:48:22,585 - INFO - Initial data shape: (3000, 10)
+2025-08-16 10:48:22,586 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-16 10:48:22,587 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-16 10:48:22,587 - INFO - Detected potential datetime column: timestamp
+2025-08-16 10:48:22,587 - INFO - Parsing datetime column: timestamp
+2025-08-16 10:48:22,592 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-16 10:48:22,594 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-16 10:48:22,595 - INFO - Processing 9 numeric columns for missing values
+2025-08-16 10:48:22,595 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-16 10:48:22,598 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-16 10:48:22,600 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-16 10:48:22,600 - INFO - Performing final data validation...
+2025-08-16 10:48:22,601 - INFO - Final data shape: (3000, 10)
+2025-08-16 10:48:22,602 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-16 10:48:22,603 - INFO - All missing values have been successfully handled
+2025-08-16 10:48:22,604 - INFO - Data cleaning completed successfully!
+2025-08-16 10:48:22,604 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-16 10:48:22,604 - INFO - Turbine IDs: 3
+2025-08-16 10:48:22,605 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-16 10:48:22,606 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-16 10:48:22,607 - INFO - Building Health Index using PCA...
+2025-08-16 10:48:22,615 - INFO - PCA explained variance: 0.2947
+2025-08-16 10:48:22,616 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-16 10:48:22,622 - INFO - Detected 48 pseudo-failures.
+2025-08-16 10:48:22,658 - INFO - RUL labeling completed.
+2025-08-16 10:48:22,659 - INFO - Starting feature extraction process...
+2025-08-16 10:48:22,660 - INFO - Creating rolling features for 11 sensors...
+2025-08-16 10:48:22,760 - INFO - Creating temporal features...
+2025-08-16 10:48:22,784 - INFO - Adding power curve residuals...
+2025-08-16 10:48:22,790 - INFO - Dropped 2933 rows with NaN features.
+2025-08-16 10:48:22,826 - INFO - Features saved to: data/features.parquet
+2025-08-16 10:48:22,826 - INFO - Starting baseline model training...
+2025-08-16 10:48:22,884 - INFO - Training final model on full dataset...
+2025-08-16 10:48:23,662 - INFO - Model saved to: models/rul_xgb.json
+2025-08-16 10:48:23,663 - INFO - Training results saved to: models/training_results.json
+2025-08-16 10:48:23,664 - INFO - Starting GRU sequence model training...
+2025-08-16 17:57:23,389 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-16 17:57:23,391 - INFO - Loading CSV data...
+2025-08-16 17:57:23,469 - INFO - Loaded 3000 rows and 10 columns
+2025-08-16 17:57:23,469 - INFO - Initial data shape: (3000, 10)
+2025-08-16 17:57:23,470 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-16 17:57:23,473 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-16 17:57:23,480 - INFO - Detected potential datetime column: timestamp
+2025-08-16 17:57:23,480 - INFO - Parsing datetime column: timestamp
+2025-08-16 17:57:23,496 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-16 17:57:23,514 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-16 17:57:23,518 - INFO - Processing 9 numeric columns for missing values
+2025-08-16 17:57:23,519 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-16 17:57:23,528 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-16 17:57:23,537 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-16 17:57:23,538 - INFO - Performing final data validation...
+2025-08-16 17:57:23,539 - INFO - Final data shape: (3000, 10)
+2025-08-16 17:57:23,541 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-16 17:57:23,543 - INFO - All missing values have been successfully handled
+2025-08-16 17:57:23,544 - INFO - Data cleaning completed successfully!
+2025-08-16 17:57:23,544 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-16 17:57:23,546 - INFO - Turbine IDs: 3
+2025-08-16 17:57:23,551 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-16 17:57:23,554 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-16 17:57:23,555 - INFO - Building Health Index using PCA...
+2025-08-16 17:57:23,591 - INFO - PCA explained variance: 0.2947
+2025-08-16 17:57:23,592 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-16 17:57:23,610 - INFO - Detected 48 pseudo-failures.
+2025-08-16 17:57:23,724 - INFO - RUL labeling completed.
+2025-08-16 17:57:23,725 - INFO - Starting feature extraction process...
+2025-08-16 17:57:23,726 - INFO - Creating rolling features for 11 sensors...
+2025-08-16 17:57:24,112 - INFO - Creating temporal features...
+2025-08-16 17:57:24,189 - INFO - Adding power curve residuals...
+2025-08-16 17:57:24,227 - INFO - Dropped 2933 rows with NaN features.
+2025-08-16 17:57:24,873 - INFO - Features saved to: data/features.parquet
+2025-08-16 17:57:24,875 - INFO - Starting baseline model training...
+2025-08-16 17:57:26,103 - INFO - Training final model on full dataset...
+2025-08-16 17:57:28,610 - INFO - Model saved to: models/rul_xgb.json
+2025-08-16 17:57:28,612 - INFO - Training results saved to: models/training_results.json
+2025-08-16 17:57:28,614 - INFO - Starting GRU sequence model training...
+2025-08-17 16:47:35,850 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 16:47:35,851 - INFO - Loading CSV data...
+2025-08-17 16:47:35,884 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 16:47:35,885 - INFO - Initial data shape: (3000, 10)
+2025-08-17 16:47:35,885 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 16:47:35,889 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 16:47:35,897 - INFO - Detected potential datetime column: timestamp
+2025-08-17 16:47:35,897 - INFO - Parsing datetime column: timestamp
+2025-08-17 16:47:35,912 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 16:47:35,924 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 16:47:35,927 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 16:47:35,928 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 16:47:35,934 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 16:47:35,938 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 16:47:35,938 - INFO - Performing final data validation...
+2025-08-17 16:47:35,938 - INFO - Final data shape: (3000, 10)
+2025-08-17 16:47:35,939 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 16:47:35,940 - INFO - All missing values have been successfully handled
+2025-08-17 16:47:35,940 - INFO - Data cleaning completed successfully!
+2025-08-17 16:47:35,940 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 16:47:35,941 - INFO - Turbine IDs: 3
+2025-08-17 16:47:35,943 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 16:47:35,944 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 16:47:35,945 - INFO - Building Health Index using PCA...
+2025-08-17 16:47:35,966 - INFO - PCA explained variance: 0.2947
+2025-08-17 16:47:35,967 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 16:47:35,974 - INFO - Detected 48 pseudo-failures.
+2025-08-17 16:47:36,019 - INFO - RUL labeling completed.
+2025-08-17 16:47:36,020 - INFO - Starting feature extraction process...
+2025-08-17 16:47:36,020 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 16:47:36,131 - INFO - Creating temporal features...
+2025-08-17 16:47:36,174 - INFO - Adding power curve residuals...
+2025-08-17 16:47:36,200 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 16:47:36,616 - INFO - Features saved to: data/features.parquet
+2025-08-17 16:47:36,616 - INFO - Starting baseline model training...
+2025-08-17 16:47:37,277 - INFO - Training final model on full dataset...
+2025-08-17 16:47:38,033 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 16:47:38,035 - INFO - Training results saved to: models/training_results.json
+2025-08-17 16:47:38,036 - INFO - Starting GRU sequence model training...
+2025-08-17 16:49:42,952 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 16:49:42,953 - INFO - Loading CSV data...
+2025-08-17 16:49:42,963 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 16:49:42,963 - INFO - Initial data shape: (3000, 10)
+2025-08-17 16:49:42,964 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 16:49:42,965 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 16:49:42,966 - INFO - Detected potential datetime column: timestamp
+2025-08-17 16:49:42,966 - INFO - Parsing datetime column: timestamp
+2025-08-17 16:49:42,972 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 16:49:42,976 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 16:49:42,977 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 16:49:42,981 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 17:07:10,931 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 17:07:10,931 - INFO - Loading CSV data...
+2025-08-17 17:07:10,944 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 17:07:10,944 - INFO - Initial data shape: (3000, 10)
+2025-08-17 17:07:10,945 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 17:07:10,946 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 17:07:10,947 - INFO - Detected potential datetime column: timestamp
+2025-08-17 17:07:10,948 - INFO - Parsing datetime column: timestamp
+2025-08-17 17:07:10,952 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 17:07:10,957 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 17:07:10,959 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 17:07:10,961 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 17:07:10,968 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 17:07:10,971 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 17:07:10,972 - INFO - Performing final data validation...
+2025-08-17 17:07:10,972 - INFO - Final data shape: (3000, 10)
+2025-08-17 17:07:10,973 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 17:07:10,974 - INFO - All missing values have been successfully handled
+2025-08-17 17:07:10,974 - INFO - Data cleaning completed successfully!
+2025-08-17 17:07:10,974 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 17:07:10,975 - INFO - Turbine IDs: 3
+2025-08-17 17:07:10,982 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 17:07:10,985 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 17:07:10,986 - INFO - Building Health Index using PCA...
+2025-08-17 17:07:11,013 - INFO - PCA explained variance: 0.2947
+2025-08-17 17:07:11,015 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 17:07:11,027 - INFO - Detected 48 pseudo-failures.
+2025-08-17 17:07:11,088 - INFO - RUL labeling completed.
+2025-08-17 17:07:11,089 - INFO - Starting feature extraction process...
+2025-08-17 17:07:11,090 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 17:07:11,223 - INFO - Creating temporal features...
+2025-08-17 17:07:11,258 - INFO - Adding power curve residuals...
+2025-08-17 17:07:11,288 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 17:07:11,378 - INFO - Features saved to: data/features.parquet
+2025-08-17 17:07:11,379 - INFO - Starting baseline model training...
+2025-08-17 17:07:11,466 - INFO - Training final model on full dataset...
+2025-08-17 17:07:12,798 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 17:07:12,802 - INFO - Training results saved to: models/training_results.json
+2025-08-17 17:07:12,804 - INFO - Starting GRU sequence model training...
+2025-08-17 17:07:26,228 - INFO - Training GRU model on 40 sequences...
+2025-08-17 17:07:26,633 - INFO - Epoch [10/50], Loss: 920.2541
+2025-08-17 17:07:26,925 - INFO - Epoch [20/50], Loss: 747.3380
+2025-08-17 17:07:27,247 - INFO - Epoch [30/50], Loss: 582.6130
+2025-08-17 17:07:27,577 - INFO - Epoch [40/50], Loss: 443.7572
+2025-08-17 17:07:27,919 - INFO - Epoch [50/50], Loss: 318.8607
+2025-08-17 17:07:27,990 - INFO - Model and scaler saved.
+2025-08-17 19:21:10,945 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 19:21:10,947 - INFO - Loading CSV data...
+2025-08-17 19:21:10,984 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 19:21:10,985 - INFO - Initial data shape: (3000, 10)
+2025-08-17 19:21:10,986 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 19:21:10,989 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 19:21:10,993 - INFO - Detected potential datetime column: timestamp
+2025-08-17 19:21:10,993 - INFO - Parsing datetime column: timestamp
+2025-08-17 19:21:11,004 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 19:21:11,015 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 19:21:11,018 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 19:21:11,020 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 19:21:11,025 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 19:21:11,028 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 19:21:11,028 - INFO - Performing final data validation...
+2025-08-17 19:21:11,029 - INFO - Final data shape: (3000, 10)
+2025-08-17 19:21:11,030 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 19:21:11,031 - INFO - All missing values have been successfully handled
+2025-08-17 19:21:11,032 - INFO - Data cleaning completed successfully!
+2025-08-17 19:21:11,032 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 19:21:11,033 - INFO - Turbine IDs: 3
+2025-08-17 19:21:11,036 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 19:21:11,038 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 19:21:11,039 - INFO - Building Health Index using PCA...
+2025-08-17 19:21:11,057 - INFO - PCA explained variance: 0.2947
+2025-08-17 19:21:11,058 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 19:21:11,065 - INFO - Detected 48 pseudo-failures.
+2025-08-17 19:21:11,104 - INFO - RUL labeling completed.
+2025-08-17 19:21:11,104 - INFO - Starting feature extraction process...
+2025-08-17 19:21:11,105 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 19:21:11,229 - INFO - Creating temporal features...
+2025-08-17 19:21:11,291 - INFO - Adding power curve residuals...
+2025-08-17 19:21:11,310 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 19:21:11,766 - INFO - Features saved to: data/features.parquet
+2025-08-17 19:21:11,766 - INFO - Starting baseline model training...
+2025-08-17 19:21:12,344 - INFO - Training final model on full dataset...
+2025-08-17 19:21:13,105 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 19:21:13,107 - INFO - Training results saved to: models/training_results.json
+2025-08-17 19:21:13,108 - INFO - Starting GRU sequence model training...
+2025-08-17 19:21:24,710 - INFO - Training GRU model on 40 sequences...
+2025-08-17 19:21:25,113 - INFO - Epoch [10/50], Loss: 896.6926
+2025-08-17 19:21:25,343 - INFO - Epoch [20/50], Loss: 697.7462
+2025-08-17 19:21:25,575 - INFO - Epoch [30/50], Loss: 532.8068
+2025-08-17 19:21:25,788 - INFO - Epoch [40/50], Loss: 386.2993
+2025-08-17 19:21:26,025 - INFO - Epoch [50/50], Loss: 270.4193
+2025-08-17 19:21:26,087 - INFO - Model and scaler saved.
+2025-08-17 19:29:36,044 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 19:29:36,044 - INFO - Loading CSV data...
+2025-08-17 19:29:36,054 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 19:29:36,054 - INFO - Initial data shape: (3000, 10)
+2025-08-17 19:29:36,054 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 19:29:36,055 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 19:29:36,056 - INFO - Detected potential datetime column: timestamp
+2025-08-17 19:29:36,056 - INFO - Parsing datetime column: timestamp
+2025-08-17 19:29:36,062 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 19:29:36,068 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 19:29:36,068 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 19:29:36,069 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 19:29:36,071 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 19:29:36,073 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 19:29:36,073 - INFO - Performing final data validation...
+2025-08-17 19:29:36,073 - INFO - Final data shape: (3000, 10)
+2025-08-17 19:29:36,075 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 19:29:36,078 - INFO - All missing values have been successfully handled
+2025-08-17 19:29:36,078 - INFO - Data cleaning completed successfully!
+2025-08-17 19:29:36,079 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 19:29:36,080 - INFO - Turbine IDs: 3
+2025-08-17 19:29:36,081 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 19:29:36,084 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 19:29:36,084 - INFO - Building Health Index using PCA...
+2025-08-17 19:29:36,090 - INFO - PCA explained variance: 0.2947
+2025-08-17 19:29:36,091 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 19:29:36,096 - INFO - Detected 48 pseudo-failures.
+2025-08-17 19:29:36,129 - INFO - RUL labeling completed.
+2025-08-17 19:29:36,129 - INFO - Starting feature extraction process...
+2025-08-17 19:29:36,130 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 19:29:36,244 - INFO - Creating temporal features...
+2025-08-17 19:29:36,299 - INFO - Adding power curve residuals...
+2025-08-17 19:29:36,308 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 19:29:36,354 - INFO - Features saved to: data/features.parquet
+2025-08-17 19:29:36,355 - INFO - Starting baseline model training...
+2025-08-17 19:29:36,445 - INFO - Training final model on full dataset...
+2025-08-17 19:29:37,066 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 19:29:37,067 - INFO - Training results saved to: models/training_results.json
+2025-08-17 19:29:37,068 - INFO - Starting GRU sequence model training...
+2025-08-17 19:29:38,721 - INFO - Training GRU model on 40 sequences...
+2025-08-17 19:29:39,102 - INFO - Epoch [10/50], Loss: 933.6027
+2025-08-17 19:29:39,383 - INFO - Epoch [20/50], Loss: 777.6237
+2025-08-17 19:29:39,743 - INFO - Epoch [30/50], Loss: 634.8595
+2025-08-17 19:29:40,122 - INFO - Epoch [40/50], Loss: 490.0804
+2025-08-17 19:29:40,419 - INFO - Epoch [50/50], Loss: 369.2632
+2025-08-17 19:29:40,434 - INFO - Model and scaler saved.
+2025-08-17 19:35:21,931 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 19:35:21,932 - INFO - Loading CSV data...
+2025-08-17 19:35:21,943 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 19:35:21,943 - INFO - Initial data shape: (3000, 10)
+2025-08-17 19:35:21,943 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 19:35:21,945 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 19:35:21,946 - INFO - Detected potential datetime column: timestamp
+2025-08-17 19:35:21,946 - INFO - Parsing datetime column: timestamp
+2025-08-17 19:35:21,951 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 19:35:21,955 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 19:35:21,956 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 19:35:21,957 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 19:35:21,963 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 19:35:21,966 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 19:35:21,966 - INFO - Performing final data validation...
+2025-08-17 19:35:21,967 - INFO - Final data shape: (3000, 10)
+2025-08-17 19:35:21,968 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 19:35:21,969 - INFO - All missing values have been successfully handled
+2025-08-17 19:35:21,969 - INFO - Data cleaning completed successfully!
+2025-08-17 19:35:21,969 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 19:35:21,970 - INFO - Turbine IDs: 3
+2025-08-17 19:35:21,973 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 19:35:21,974 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 19:35:21,980 - INFO - Building Health Index using PCA...
+2025-08-17 19:35:21,988 - INFO - PCA explained variance: 0.2947
+2025-08-17 19:35:21,989 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 19:35:22,000 - INFO - Detected 48 pseudo-failures.
+2025-08-17 19:35:22,046 - INFO - RUL labeling completed.
+2025-08-17 19:35:22,047 - INFO - Starting feature extraction process...
+2025-08-17 19:35:22,048 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 19:35:22,179 - INFO - Creating temporal features...
+2025-08-17 19:35:22,222 - INFO - Adding power curve residuals...
+2025-08-17 19:35:22,235 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 19:35:22,279 - INFO - Features saved to: data/features.parquet
+2025-08-17 19:35:22,280 - INFO - Starting baseline model training...
+2025-08-17 19:35:22,335 - INFO - Training final model on full dataset...
+2025-08-17 19:35:23,055 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 19:35:23,056 - INFO - Training results saved to: models/training_results.json
+2025-08-17 19:35:23,058 - INFO - Starting GRU sequence model training...
+2025-08-17 19:35:24,761 - INFO - Training GRU model on 40 sequences...
+2025-08-17 19:35:25,076 - INFO - Epoch [10/50], Loss: 954.1434
+2025-08-17 19:35:25,418 - INFO - Epoch [20/50], Loss: 816.0187
+2025-08-17 19:35:25,736 - INFO - Epoch [30/50], Loss: 671.2619
+2025-08-17 19:35:26,019 - INFO - Epoch [40/50], Loss: 532.3255
+2025-08-17 19:35:26,295 - INFO - Epoch [50/50], Loss: 401.6717
+2025-08-17 19:35:26,302 - INFO - Model and scaler saved.
+2025-08-17 20:12:49,216 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 20:12:49,216 - INFO - Loading CSV data...
+2025-08-17 20:12:49,236 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 20:12:49,237 - INFO - Initial data shape: (3000, 10)
+2025-08-17 20:12:49,238 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 20:12:49,240 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 20:12:49,240 - INFO - Detected potential datetime column: timestamp
+2025-08-17 20:12:49,241 - INFO - Parsing datetime column: timestamp
+2025-08-17 20:12:49,255 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 20:12:49,284 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 20:12:49,289 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 20:12:49,290 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 20:12:49,295 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 20:12:49,298 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 20:12:49,298 - INFO - Performing final data validation...
+2025-08-17 20:12:49,299 - INFO - Final data shape: (3000, 10)
+2025-08-17 20:12:49,300 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 20:12:49,301 - INFO - All missing values have been successfully handled
+2025-08-17 20:12:49,302 - INFO - Data cleaning completed successfully!
+2025-08-17 20:12:49,302 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 20:12:49,303 - INFO - Turbine IDs: 3
+2025-08-17 20:12:49,360 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 20:12:49,363 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 20:12:49,364 - INFO - Building Health Index using PCA...
+2025-08-17 20:12:49,405 - INFO - PCA explained variance: 0.2947
+2025-08-17 20:12:49,406 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 20:12:49,417 - INFO - Detected 48 pseudo-failures.
+2025-08-17 20:12:49,458 - INFO - RUL labeling completed.
+2025-08-17 20:12:49,458 - INFO - Starting feature extraction process...
+2025-08-17 20:12:49,459 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 20:12:49,564 - INFO - Creating temporal features...
+2025-08-17 20:12:49,602 - INFO - Adding power curve residuals...
+2025-08-17 20:12:49,625 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 20:12:49,701 - INFO - Features saved to: data/features.parquet
+2025-08-17 20:12:49,701 - INFO - Starting baseline model training...
+2025-08-17 20:12:49,762 - INFO - Training final model on full dataset...
+2025-08-17 20:12:50,329 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 20:12:50,330 - INFO - Training results saved to: models/training_results.json
+2025-08-17 20:12:50,331 - INFO - Starting GRU sequence model training...
+2025-08-17 20:12:52,128 - INFO - Training GRU model on 40 sequences...
+2025-08-17 20:12:52,505 - INFO - Epoch [10/50], Loss: 941.4508
+2025-08-17 20:12:52,816 - INFO - Epoch [20/50], Loss: 785.3607
+2025-08-17 20:12:53,055 - INFO - Epoch [30/50], Loss: 616.7518
+2025-08-17 20:12:53,272 - INFO - Epoch [40/50], Loss: 467.3144
+2025-08-17 20:12:53,534 - INFO - Epoch [50/50], Loss: 333.3416
+2025-08-17 20:12:53,554 - INFO - Model and scaler saved.
+2025-08-17 20:16:24,185 - INFO - Starting data loading and cleaning from: data/Turbine_Data.csv
+2025-08-17 20:16:24,186 - INFO - Loading CSV data...
+2025-08-17 20:16:24,196 - INFO - Loaded 3000 rows and 10 columns
+2025-08-17 20:16:24,196 - INFO - Initial data shape: (3000, 10)
+2025-08-17 20:16:24,197 - INFO - Columns: ['turbine_id', 'timestamp', 'wind_speed', 'power_output', 'rotor_speed', 'blade_pitch', 'gearbox_oil_temp', 'bearing_temp', 'vibration_x', 'vibration_y']
+2025-08-17 20:16:24,198 - INFO - Data types:
+turbine_id            int64
+timestamp            object
+wind_speed          float64
+power_output        float64
+rotor_speed         float64
+blade_pitch         float64
+gearbox_oil_temp    float64
+bearing_temp        float64
+vibration_x         float64
+vibration_y         float64
+dtype: object
+2025-08-17 20:16:24,199 - INFO - Detected potential datetime column: timestamp
+2025-08-17 20:16:24,199 - INFO - Parsing datetime column: timestamp
+2025-08-17 20:16:24,203 - INFO - Sorting data by turbine_id and timestamp...
+2025-08-17 20:16:24,211 - INFO - Missing values before cleaning:
+turbine_id            0
+timestamp             0
+wind_speed            0
+power_output        150
+rotor_speed           0
+blade_pitch           0
+gearbox_oil_temp     90
+bearing_temp          0
+vibration_x           0
+vibration_y           0
+dtype: int64
+2025-08-17 20:16:24,212 - INFO - Processing 9 numeric columns for missing values
+2025-08-17 20:16:24,213 - INFO - Processing column 'power_output' with 150 missing values
+2025-08-17 20:16:24,216 - INFO - Processing column 'gearbox_oil_temp' with 90 missing values
+2025-08-17 20:16:24,220 - INFO - Missing values after cleaning:
+turbine_id          0
+timestamp           0
+wind_speed          0
+power_output        0
+rotor_speed         0
+blade_pitch         0
+gearbox_oil_temp    0
+bearing_temp        0
+vibration_x         0
+vibration_y         0
+dtype: int64
+2025-08-17 20:16:24,223 - INFO - Performing final data validation...
+2025-08-17 20:16:24,223 - INFO - Final data shape: (3000, 10)
+2025-08-17 20:16:24,225 - INFO - Data types after cleaning:
+turbine_id                   int64
+timestamp           datetime64[ns]
+wind_speed                 float64
+power_output               float64
+rotor_speed                float64
+blade_pitch                float64
+gearbox_oil_temp           float64
+bearing_temp               float64
+vibration_x                float64
+vibration_y                float64
+dtype: object
+2025-08-17 20:16:24,226 - INFO - All missing values have been successfully handled
+2025-08-17 20:16:24,227 - INFO - Data cleaning completed successfully!
+2025-08-17 20:16:24,227 - INFO - Final dataset: 3000 rows, 10 columns
+2025-08-17 20:16:24,228 - INFO - Turbine IDs: 3
+2025-08-17 20:16:24,228 - INFO - Date range: 2023-01-01 00:00:00 to 2023-02-11 15:00:00
+2025-08-17 20:16:24,229 - INFO - No failure flags found. Generating RUL from Health Index.
+2025-08-17 20:16:24,230 - INFO - Building Health Index using PCA...
+2025-08-17 20:16:24,237 - INFO - PCA explained variance: 0.2947
+2025-08-17 20:16:24,238 - INFO - Detecting pseudo-failures with threshold 0.3...
+2025-08-17 20:16:24,244 - INFO - Detected 48 pseudo-failures.
+2025-08-17 20:16:24,277 - INFO - RUL labeling completed.
+2025-08-17 20:16:24,278 - INFO - Starting feature extraction process...
+2025-08-17 20:16:24,279 - INFO - Creating rolling features for 11 sensors...
+2025-08-17 20:16:24,383 - INFO - Creating temporal features...
+2025-08-17 20:16:24,483 - INFO - Adding power curve residuals...
+2025-08-17 20:16:24,499 - INFO - Dropped 2933 rows with NaN features.
+2025-08-17 20:16:24,539 - INFO - Features saved to: data/features.parquet
+2025-08-17 20:16:24,541 - INFO - Starting baseline model training...
+2025-08-17 20:16:24,601 - INFO - Training final model on full dataset...
+2025-08-17 20:16:25,135 - INFO - Model saved to: models/rul_xgb.json
+2025-08-17 20:16:25,137 - INFO - Training results saved to: models/training_results.json
+2025-08-17 20:16:25,138 - INFO - Starting GRU sequence model training...
+2025-08-17 20:16:26,454 - INFO - Training GRU model on 40 sequences...
+2025-08-17 20:16:26,707 - INFO - Epoch [10/50], Loss: 931.5416
+2025-08-17 20:16:26,905 - INFO - Epoch [20/50], Loss: 748.4672
+2025-08-17 20:16:27,136 - INFO - Epoch [30/50], Loss: 579.3019
+2025-08-17 20:16:27,368 - INFO - Epoch [40/50], Loss: 429.6698
+2025-08-17 20:16:27,625 - INFO - Epoch [50/50], Loss: 308.8328
+2025-08-17 20:16:27,630 - INFO - Model and scaler saved.
